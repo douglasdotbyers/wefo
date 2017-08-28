@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <title>WEFO</title>
+    <link rel="stylesheet" href="styles/app.css">
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.js"></script> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <script src="scripts/app.js"></script>
+  </head>
+
+  <body>
+
+    <h1>WEFO</h1>
+    <h2>Which End&rsquo;s First Out?</h2>
+
+    <svg id="map" width="680" height="400">
+
+      <defs>
+        <mask id="outer-path-mask">
+          <rect x="0" y="0" width="680" height="400" style="fill:#000" />
+          <polygon points="" style="fill:#FFF" />
+        </mask>
+        <mask id="inner-path-mask">
+          <rect x="0" y="0" width="680" height="400" style="fill:#000" />
+          <polygon points="" style="fill:#FFF" />
+        </mask>
+      </defs>
+
+      <rect class="outer-circle" stroke-width="40.5" x="20" y="20" width="640" height="360" rx="180" ry="180" />
+      <rect class="inner-circle" stroke-width="40.5" x="60" y="60" width="560" height="280" rx="140" ry="140" />
+
+      <rect class="outer-path" stroke-width="10.5" x="35" y="35" width="610" height="330" rx="165" ry="165" mask="url(#outer-path-mask)" />
+      <rect class="inner-path" stroke-width="10.5" x="45" y="45" width="590" height="310" rx="155" ry="155" mask="url(#inner-path-mask)" />
+
+      <polyline class="outer-arrow" stroke-width="1.5" points="330,15  350,15  345,12"  />
+      <polyline class="outer-arrow" stroke-width="1.5" points="350,385 330,385 335,388" />
+
+      <polyline class="inner-arrow" stroke-width="1.5" points="350,65  330,65  335,68"  />
+      <polyline class="inner-arrow" stroke-width="1.5" points="330,335 350,335 345,332" />
+
+      <circle class="PA station-underlay" cx="46"  cy="155" r="20" />
+      <circle class="KH station-underlay" cx="100" cy="75"  r="20" />
+      <circle class="HH station-underlay" cx="190" cy="40"  r="20" />
+      <circle class="KB station-underlay" cx="290" cy="40"  r="20" />
+      <circle class="SG station-underlay" cx="390" cy="40"  r="20" />
+      <circle class="CO station-underlay" cx="490" cy="40"  r="20" />
+      <circle class="BU station-underlay" cx="580" cy="75"  r="20" />
+      <circle class="SE station-underlay" cx="634" cy="155" r="20" />
+
+      <circle class="GO station-underlay" cx="64"  cy="284" r="20" />
+      <circle class="IB station-underlay" cx="140" cy="348" r="20" />
+      <circle class="CE station-underlay" cx="240" cy="360" r="20" />
+      <circle class="KP station-underlay" cx="340" cy="360" r="20" />
+      <circle class="SR station-underlay" cx="440" cy="360" r="20" />
+      <circle class="WS station-underlay" cx="540" cy="348" r="20" />
+      <circle class="BS station-underlay" cx="616" cy="284" r="20" />
+
+      <text class="PA station-label" x="46"  y="155">PA</text>
+      <text class="KH station-label" x="100" y="75" >KH</text>
+      <text class="HH station-label" x="190" y="40" >HH</text>
+      <text class="KB station-label" x="290" y="40" >KB</text>
+      <text class="SG station-label" x="390" y="40" >SG</text>
+      <text class="CO station-label" x="490" y="40" >CO</text>
+      <text class="BU station-label" x="580" y="75" >BU</text>
+      <text class="SE station-label" x="634" y="155">SE</text>
+
+      <text class="GO station-label" x="64"  y="284">GO</text>
+      <text class="IB station-label" x="140" y="348">IB</text>
+      <text class="CE station-label" x="240" y="360">CE</text>
+      <text class="KP station-label" x="340" y="360">KP</text>
+      <text class="SR station-label" x="440" y="360">SR</text>
+      <text class="WS station-label" x="540" y="348">WS</text>
+      <text class="BS station-label" x="616" y="284">BS</text>
+
+      <circle id="PA" class="station-overlay" cx="46"  cy="155" r="20" />
+      <circle id="KH" class="station-overlay" cx="100" cy="75"  r="20" />
+      <circle id="HH" class="station-overlay" cx="190" cy="40"  r="20" />
+      <circle id="KB" class="station-overlay" cx="290" cy="40"  r="20" />
+      <circle id="SG" class="station-overlay" cx="390" cy="40"  r="20" />
+      <circle id="CO" class="station-overlay" cx="490" cy="40"  r="20" />
+      <circle id="BU" class="station-overlay" cx="580" cy="75"  r="20" />
+      <circle id="SE" class="station-overlay" cx="634" cy="155" r="20" />
+
+      <circle id="GO" class="station-overlay" cx="64"  cy="284" r="20" />
+      <circle id="IB" class="station-overlay" cx="140" cy="348" r="20" />
+      <circle id="CE" class="station-overlay" cx="240" cy="360" r="20" />
+      <circle id="KP" class="station-overlay" cx="340" cy="360" r="20" />
+      <circle id="SR" class="station-overlay" cx="440" cy="360" r="20" />
+      <circle id="WS" class="station-overlay" cx="540" cy="348" r="20" />
+      <circle id="BS" class="station-overlay" cx="616" cy="284" r="20" />
+
+      <text class="instruction-label" x="340" y="200"></text>
+      <text class="instruction-label-upper" x="340" y="140"></text>
+      <text class="instruction-label-lower" x="340" y="234"></text>
+
+      <rect class="instruction-overlay" x="80" y="80" width="520" height="240" rx="120" ry="120" />
+
+    </svg>
+
+  </body>
+
+</html>
