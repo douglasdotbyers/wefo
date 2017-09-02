@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256">
+
+  <rect fill="#EA5B0C" stroke="#AF996D" stroke-width="16" x="08" y="08" width="240" height="240" rx="40" ry="40" />
+  <rect fill="#EA5B0C" stroke="#845138" stroke-width="16" x="24" y="24" width="208" height="208" rx="24" ry="24" />
+
+  <polyline fill="none" stroke="#AF996D" stroke-linecap="round" stroke-linejoin="round" stroke-width="48" points="064,192 192,064" />
+  <polyline fill="none" stroke="#AF996D" stroke-linecap="round" stroke-linejoin="round" stroke-width="48" points="080,128 064,192 128,176" />
+  <polyline fill="none" stroke="#AF996D" stroke-linecap="round" stroke-linejoin="round" stroke-width="48" points="128,080 192,064 176,128" />
+
+  <polyline fill="none" stroke="#845138" stroke-linecap="round" stroke-linejoin="round" stroke-width="16" points="064,192 192,064" />
+  <polyline fill="none" stroke="#845138" stroke-linecap="round" stroke-linejoin="round" stroke-width="16" points="080,128 064,192 128,176" />
+  <polyline fill="none" stroke="#845138" stroke-linecap="round" stroke-linejoin="round" stroke-width="16" points="128,080 192,064 176,128" />
+
+</svg>
