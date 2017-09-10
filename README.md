@@ -1,6 +1,6 @@
 # WEFO
 
-Deployed, here – https://douglasdotbyers.github.io/wefo/wefo.html
+Deployed, here – https://douglasdotbyers.github.io/wefo/
 
 Glasgow Subway concept – Which End's First Out?
 
